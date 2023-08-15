@@ -1,0 +1,11 @@
+Password hash stored in /etc/passwd:
+
+```
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+```
+
+Cracked it with hashcat: abcdefg
+
+```
+hashcat -a 0 resources/hash /usr/share/seclists/Passwords/Leaked-Databases/rockyou.txt
+```
