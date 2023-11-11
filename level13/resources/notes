@@ -1,0 +1,26 @@
+flg.py
+
+```
+import gdb
+
+gdb.execute('file ~/level13')
+gdb.execute('set disassembly-flavor intel')
+print('[+] Disassembling main')
+print(gdb.execute('disassemble main'))
+print('[+] Set breakpoint at line 14')
+gdb.execute('b *main+14')
+gdb.execute('r')
+print(gdb.execute('disassemble main'))
+print('[+] EAX contains the return value of getuid()')
+print(gdb.execute('p $eax'))
+print('[+] Changing EAX value to 4242')
+gdb.execute('set $eax=4242')
+print(gdb.execute('c'))
+gdb.execute('quit')
+```
+
+run the following command
+
+```
+gdb -q -x /tmp/flg.py
+```
