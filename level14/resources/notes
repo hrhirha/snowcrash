@@ -1,0 +1,45 @@
+## method 1 - level13
+
+```
+strings getflag
+```
+
+reveals the following string is the flag for flag14 user:  "g <t61:|4_|!@IF.-62FH&G~DCK/Ekrvvdwz?v|"
+
+flag.py
+```
+import gdb
+
+gdb.execute('file ~/level13')
+gdb.execute('b *main+14')
+gdb.execute('b *ft_des+10')
+gdb.execute('r')
+gdb.execute('set $eax=4242')
+gdb.execute('c')
+gdb.execute('set $eax="g <t61:|4_|!@IF.-62FH&G~DCK/Ekrvvdwz?v|"')
+gdb.execute('c')
+gdb.execute('quit')
+```
+
+
+## method 2 - reverse engineer getflag
+
+flag.py
+
+```
+import gdb
+
+gdb.execute('file /bin/getflag')
+gdb.execute('b ptrace')
+gdb.execute('b getuid')
+gdb.execute('r')
+gdb.execute('step')
+gdb.execute('set $eax=0')
+gdb.execute('c')
+gdb.execute('step')
+gdb.execute('set $eax = 3014')
+gdb.execute('c')
+gdb.execute('quit')
+```
+
+The flag is: 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
