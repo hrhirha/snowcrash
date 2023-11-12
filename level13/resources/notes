@@ -24,3 +24,5 @@ run the following command
 ```
 gdb -q -x /tmp/flg.py
 ```
+
+The flag is: 2A31L79asukciNyi8uppkEuSx
